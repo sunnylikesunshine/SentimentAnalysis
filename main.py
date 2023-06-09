@@ -13,10 +13,12 @@ from SentimentCutOff import SentCutOff
 
 
 # read in csv file with annotated values for accuracy analysis
-df = pd.read_csv("test.csv")
+csv_name = "chatgpt_version.csv"
+df = pd.read_csv(csv_name)
 
 # some of the sentiment cells are missing values. drop these from the data set
-df.dropna(subset=['sentiment'], inplace=True)
+if csv_name == "test.csv":
+    df.dropna(subset=['sentiment'], inplace=True)
 
 # create new columns in df object to write calculated sentiment to
 df["vader"] = None
@@ -62,11 +64,16 @@ for index, row in df.iterrows():
 
 
 # calculate classification report and confusion matrix for vader and textblob results
-print("Compare Vader with annotated_sentiment.")
+print("Compare Vader with true sentiment.")
 print(classification_report(df['sentiment'],df['vader']))
 print(confusion_matrix(df['sentiment'], df['vader']))
 
 
-print("Compare TextBlob with annotated_sentiment.")
+print("Compare TextBlob with true sentiment.")
 print(classification_report(df['sentiment'],df['textblob']))
 print(confusion_matrix(df['sentiment'], df['textblob']))
+
+if csv_name == "chatgpt_version.csv":
+    print("Compare ChatGPT with true sentiment.")
+    print(classification_report(df['sentiment'],df['chatgpt']))
+    print(confusion_matrix(df['sentiment'], df['chatgpt']))

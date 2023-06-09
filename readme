@@ -1,0 +1,7 @@
+Program to do sentiment analysis on data set of tweets. Tools used are Vader, TextBlob, and ChatGPT.
+
+The chatgpt.py file is to be run once as OpenAI will only allow 60 queries/min to chatgpt. It creates a new csv file that Vader and TextBlob can also be run on to do an accuracy analysis and comparison.
+
+Change the csv_name variable between "test.csv" and "chatgpt_version.csv" to see the results. Using "test.csv" will not use ChatGPT as it is a much larger data set.
+
+If you want to run the ChatGPT code, generate an OpenAI key and change the "file_path" variable to the file path for your config.ini file.
