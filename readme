@@ -5,3 +5,5 @@ The chatgpt.py file is to be run once as OpenAI will only allow 60 queries/min t
 Change the csv_name variable between "test.csv" and "chatgpt_version.csv" to see the results. Using "test.csv" will not use ChatGPT as it is a much larger data set.
 
 If you want to run the ChatGPT code, generate an OpenAI key and change the "file_path" variable to the file path for your config.ini file.
+
+File "test.csv" is from Kaggle -- titles "Sentiment Analysis Dataset".
