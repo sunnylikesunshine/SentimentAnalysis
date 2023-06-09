@@ -5,10 +5,10 @@
 def SentCutOff(mean,std,score):
 
     if score >= std:
-        sentiment = "POSITIVE"
+        sentiment = "positive"
     elif score <= mean:
-        sentiment = "NEGATIVE"
+        sentiment = "negative"
     else:
-        sentiment = "NEUTRAL"
+        sentiment = "neutral"
 
     return sentiment

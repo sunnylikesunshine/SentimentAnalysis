@@ -7,6 +7,8 @@ import re
 
 def PreprocessText(text):
 
+    text = str(text)
+
     # tokenize the text
     tokens = word_tokenize(text.lower())
 
